@@ -37,7 +37,7 @@ If all goes well, you should see a Chrome window open, and the entire process wi
 
 ### For Developers:
 
-If you want to build a UI for this, change the input file format or extend it in any other way, it should be fairly easy to do. You can just import the script and use the ``runDataBasics`` function, which receives the **login url**, **username**, **password** and **timesheet lines** which is a list of json objects with "fav", "note" and "times" attributes.
+If you want to build a UI for this, change the input file format or extend it in any other way, it should be fairly easy to do. You can just import the script and use the ``runDataBasics`` function, which receives the **login url**, **username**, **password** and **timesheet lines** which is a list of dict/json objects with ``fav``, ``note`` and ``times`` attributes.
 
 Example:
 ``` py
