@@ -29,6 +29,7 @@ Example:
 ```
 ### Execution:
 Just execute the script!
+
 ```python adb.py```
 
 If all goes well, you should see a Chrome window open, and the entire process will be automated. Once finished, **review your timesheet** and submit! **This script does not auto-submit your timesheet**. You have to press that button yourself :)
