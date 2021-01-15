@@ -19,7 +19,7 @@ p455w0rd
 ```
 
 ### Filling your Timesheet
-Anytime you want to fill your timesheet, prepare a ``timesheet.txt`` file following the format detailed below and place it in the same directory as the others. Your timesheet will be filled using the information contained in this file. Each line in this file corresponds to a timesheet entry, with each value separated by commas. 
+Anytime you want to fill your timesheet, prepare a ``timesheet.txt`` file following the format detailed below and place it in the same directory as the script, auth and driver. Each line in this file corresponds to a timesheet entry, with each value separated by commas. 
 
 The first value is the **row number for the favorite this entry will correspond to, starting from 0** (in the above example, your favorite entry for project work would be 0, and the one for vacations would be 1). You may need to login to DataBasics and look at your Favorites to figure out what number each Favorite corresponds to.
 
