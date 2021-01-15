@@ -8,7 +8,7 @@ Simplifies Timesheet Entry for DataBasics Timesheets. Tested in Windows only so 
 
 ### Setup:
 * Clone this repository into a dedicated directory.
-* Download the **[Selenium Chrome driver](https://chromedriver.chromium.org/downloads)** and place it in the same directory alongside adb.py
+* Download the **[Selenium Chrome driver](https://chromedriver.chromium.org/downloads)** and place the executable file in the same directory alongside adb.py
 * Create an ``auth.txt`` file with 3 lines: The **URL** for your DataBasics login page, your **username** and your **password**. Example:
 ```
 https://xxx.data-basics.net/xxx/databasics.ext#
