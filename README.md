@@ -7,7 +7,7 @@ Simplifies Timesheet Entry for DataBasics Timesheets. Tested in Windows only so 
 * On DataBasics, **[create as many Favorite/Memorized](https://databasics.atlassian.net/wiki/spaces/PG6/pages/526544/Favorites+Timesheet) rows as you will need** to cover your timesheet entries. For example, create one for your project, one for vacations, and so on.
 
 ### Setup:
-* Clone this repository into a dedicated directory.
+* Clone this repository into a dedicated directory (the ``adb.py`` file is really the only thing you need).
 * Download the **[Selenium Chrome driver](https://chromedriver.chromium.org/downloads)** and place the executable file in the same directory alongside adb.py
 * Create an ``auth.txt`` file with 3 lines: The **URL** for your DataBasics login page, your **username** and your **password**. Example:
 ```
