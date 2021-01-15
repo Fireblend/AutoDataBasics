@@ -17,7 +17,11 @@ p455w0rd
 ```
 * Create a ``timesheet.txt`` file and place it alongside the driver, script and auth file. Your timesheet will be filled using the information contained in this file: Each line will correspond to a timesheet entry, with each value separated by commas. 
 
-The first value is the **row number for the favorite this entry will correspond to, starting from 0** (in the above example, your favorite entry for project work would be 0, and the one for vacations would be 1). The second value is the entry note/description, and the rest of the values are the time values from Monday to Friday. Example: 
+The first value is the **row number for the favorite this entry will correspond to, starting from 0** (in the above example, your favorite entry for project work would be 0, and the one for vacations would be 1). You may need to login to DataBasics and look at your Favorites to figure out what number each Favorite corresponds to.
+
+The rest of the values are self-explanatory: The second value is the entry note/description, and the following 5 values are the time values from Monday to Friday. 
+
+Example: 
 ```
 0, This is a note for an entry that uses the favorite in the first row, 1,2,3,4,5
 1, This is a note for an entry using the favorite in second row, 5,4,3,2,1
