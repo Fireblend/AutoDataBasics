@@ -23,9 +23,9 @@ The rest of the values are self-explanatory: The second value is the entry note/
 
 Example: 
 ```
-0, This is a note for an entry that uses the favorite in the first row, 1,2,3,4,5
-1, This is a note for an entry using the favorite in second row, 5,4,3,2,1
-1, This is a note for another entry that uses the favorite in the second row, 0,0,1,0,0
+0, This is a note for an entry that uses the favorite in the first row (project work), 1,8,0,8,8
+1, This is a note for an entry using the favorite in second row (vacations), 7,0,0,0,0
+1, This is a note for another entry that uses the favorite in the second row (vacations), 0,0,8,0,0
 ```
 ### Execution:
 Just execute the script!
