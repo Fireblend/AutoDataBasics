@@ -3,7 +3,7 @@ Simplifies Timesheet Entry for DataBasics Timesheets. Tested in Windows only so 
 
 ### Requirements:
 * A Python **3.6+** environment
-* Selenium (can be installed using ``pip``)
+* Selenium (can be installed using ``pip install selenium``)
 * On DataBasics, **[create as many Favorite/Memorized](https://databasics.atlassian.net/wiki/spaces/PG6/pages/526544/Favorites+Timesheet) rows as you will need** to cover your timesheet entries. For example, create one for your project, one for vacations, and so on.
 
 ### Setup:
