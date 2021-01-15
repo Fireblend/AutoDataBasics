@@ -6,7 +6,6 @@ Tested in Windows only so far.
 ### Requirements:
 * A Python **3.6+** environment
 * Selenium (can be installed using ``pip install selenium``)
-* On DataBasics, **[create as many Favorite/Memorized](https://databasics.atlassian.net/wiki/spaces/PG6/pages/526544/Favorites+Timesheet) rows as you will need** to cover your timesheet entries. For example, create one for your project, one for vacations, and so on.
 
 ### Setup:
 * Clone this repository into a dedicated directory (the ``adb.py`` file is really the only thing you need).
@@ -17,6 +16,7 @@ https://xxx.data-basics.net/xxx/databasics.ext#
 sergiome@gmail.com
 p455w0rd
 ```
+* On DataBasics, **[create as many Favorite/Memorized](https://databasics.atlassian.net/wiki/spaces/PG6/pages/526544/Favorites+Timesheet) rows as you will need** to cover your timesheet entries. For example, create one for your project, one for vacations, and so on.
 
 ### Filling your Timesheet
 Anytime you want to fill your timesheet, prepare a ``timesheet.txt`` file following the format detailed below and place it in the same directory as the script, auth and driver. Each line in this file corresponds to a timesheet entry, with each value separated by commas. 
