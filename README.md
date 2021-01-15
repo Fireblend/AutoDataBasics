@@ -31,6 +31,8 @@ Example:
 1, This is a note for an entry using the favorite in second row (vacations), 7,0,0,0,0
 1, This is a note for another entry that uses the favorite in the second row (vacations), 0,0,8,0,0
 ```
+(This is a CSV file and is ingested as one, so feel free to use your favorite CSV Editor to prepare it!)
+
 ### Execution:
 Just execute the script!
 
