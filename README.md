@@ -1,5 +1,7 @@
 # AutoDataBasics
-Simplifies Timesheet Entry for DataBasics Timesheets. Tested in Windows only so far.
+Simplifies Timesheet Entry for DataBasics Timesheets. This should make it much easier to submit your timesheets without having to deal with DataBasics' UI.
+
+Tested in Windows only so far.
 
 ### Requirements:
 * A Python **3.6+** environment
