@@ -23,7 +23,7 @@ Anytime you want to fill your timesheet, prepare a ``timesheet.txt`` file follow
 
 The first value of every line is the **position of the favorite/memorized entry to be used for this line, as displayed in your Favorites table, starting from 0** (see the picture below for an example). You may need to login to DataBasics and look at your Favorites table to figure out what number each Favorite corresponds to.
 
-<img src="https://i.imgur.com/LdExgJH.png" width=550>
+<img src="https://i.imgur.com/WpdlWMN.png" width=550>
 
 The rest of the values of each line are self-explanatory: The second value is the entry note/description, and the following 5 values are the time values from Monday to Friday. 
 
