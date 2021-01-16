@@ -1,9 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
+from os import path
 import csv
 
-def runDataBasics(db_url, username, password, timesheet_lines):
+def runDataBasics(db_url, username, password, timesheet_lines, alias={}):
     driver = webdriver.Chrome('./chromedriver')
     driver.get(db_url)
 
@@ -37,7 +38,12 @@ def runDataBasics(db_url, username, password, timesheet_lines):
 
     print("Creating Entry Lines...")
     for line in timesheet_lines:
-        icon_adds[int(line["fav"])].click()
+        try:
+            row = int(line["fav"])
+        except:
+            row = alias[line["fav"]]
+
+        icon_adds[].click()
         sleep(0.2)
 
     x_row_editors = driver.find_elements_by_id("lineNo")
@@ -79,6 +85,15 @@ if __name__ == "__main__":
         username = auth_txt[1]
         password = auth_txt[2]
 
+    alias_dict = dict()
+    if(path.exists("alias.txt")):
+        with open("alias.txt") as alias:
+            for line in alias.read().split("\n"):
+                try:
+                    alias_dict[line.split(":")[0]] = int(line.split(":")[1])
+                except:
+                    pass
+
     with open("timesheet.txt") as ts:
         csv_reader = csv.reader(ts)
         timesheet_lines = []
@@ -87,4 +102,4 @@ if __name__ == "__main__":
             "note":row[1].strip(),
             "times":[x.strip() for x in row[2:]]})
 
-    runDataBasics(db_url, username, password, timesheet_lines)
+    runDataBasics(db_url, username, password, timesheet_lines, alias=alias_dict)
