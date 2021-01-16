@@ -5,7 +5,9 @@ from os import path
 import csv
 
 def runDataBasics(db_url, username, password, timesheet_lines, alias={}):
-    driver = webdriver.Chrome('./chromedriver')
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_experimental_option("detach", True)
+    driver = webdriver.Chrome('./chromedriver', desired_capabilities=chrome_options.to_capabilities())
     driver.get(db_url)
 
     print("Filling Username...")
@@ -32,7 +34,7 @@ def runDataBasics(db_url, username, password, timesheet_lines, alias={}):
     favorites_tab = driver.find_element_by_class_name("vertTab-timesheet-template-icon")
     favorites_tab.click()
 
-    sleep(0.5)
+    sleep(1)
 
     icon_adds = driver.find_elements_by_class_name("icon-add")
 
@@ -43,16 +45,16 @@ def runDataBasics(db_url, username, password, timesheet_lines, alias={}):
         except:
             row = alias[line["fav"]]
 
-        icon_adds.click()
-        sleep(0.2)
+        icon_adds[row].click()
+        sleep(1)
 
     x_row_editors = driver.find_elements_by_id("lineNo")
 
     print("Filling Lines...")
+    timesheet_lines.reverse()
     for row in range(len(x_row_editors)):
         web_row = x_row_editors[row]
         entry = timesheet_lines[row]
-        timesheet_lines.reverse()
         web_row.click()
         sleep(0.3)
 
