@@ -43,7 +43,7 @@ def runDataBasics(db_url, username, password, timesheet_lines, alias={}):
         except:
             row = alias[line["fav"]]
 
-        icon_adds[].click()
+        icon_adds.click()
         sleep(0.2)
 
     x_row_editors = driver.find_elements_by_id("lineNo")
