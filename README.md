@@ -43,6 +43,21 @@ Just execute the script!
 
 If all goes well, you should see a Chrome window open, and the entire process will be automated. Once finished, **review your timesheet** and submit! **This script does not auto-submit your timesheet**. You have to press that button yourself :)
 
+### Bonus: Using Aliases:
+You can set up an **alias file** to replace the numeric row values for your Favorites with the words of your choosing, like "project", "meeting" or "vacations". Simply create an ``alias.txt`` file in the same directory as the script with the mappings specified like so:
+```
+project:0
+vacations:1
+meetings:2
+```
+Then you can uses those aliases instead of the numbers in your timesheet file:
+```
+project, This is a note for an entry that uses the project favorite, 1,5,0,6,6
+vacations, This is a note for an entry using the vacations favorite, 7,0,0,0,0
+vacations, This is a note for another entry that uses the vacations favorite, 0,0,8,0,0
+meetings, Finally this note is for an entry using the meetings favorite, 0,3,0,2,2
+```
+
 ---
 
 ### For Developers:
