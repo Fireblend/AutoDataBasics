@@ -50,6 +50,10 @@ def runDataBasics(db_url, username, password, timesheet_lines, alias={}):
 
     x_row_editors = driver.find_elements_by_id("lineNo")
 
+    print("Closing Favorites View...")
+    timesheet_tab = driver.find_element_by_class_name("vertTab-report-icon-count")
+    timesheet_tab.click()
+
     print("Filling Lines...")
     timesheet_lines.reverse()
     for row in range(len(x_row_editors)):
