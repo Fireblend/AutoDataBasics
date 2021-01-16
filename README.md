@@ -19,15 +19,13 @@ p455w0rd
 * On DataBasics, **[create as many Favorite/Memorized](https://databasics.atlassian.net/wiki/spaces/PG6/pages/526544/Favorites+Timesheet) rows as you will need** to cover your timesheet entries. For example, create one for your project, one for vacations, and so on.
 
 ### Filling your Timesheet
-Anytime you want to fill your timesheet, prepare a ``timesheet.txt`` file following the format detailed below and place it in the same directory as the script, auth and driver. Each line in this file corresponds to a timesheet entry, with each value separated by commas. 
+Anytime you want to fill your timesheet, prepare a ``timesheet.txt`` file following the format detailed below and place it in the same directory as the script, auth and driver. Each line in this file corresponds to a timesheet entry, with its values separated by commas. 
 
-The first value of every row is the **position of the favorite/memorized entry to be used for this line, as displayed in your Favorites table, starting from 0** (in the above example, your favorite entry for project work would be 0, and the one for vacations would be 1). You may need to login to DataBasics and look at your Favorites to figure out what number each Favorite corresponds to.
-
-Example mapping:
+The first value of every line is the **position of the favorite/memorized entry to be used for this line, as displayed in your Favorites table, starting from 0** (see the picture below for an example). You may need to login to DataBasics and look at your Favorites table to figure out what number each Favorite corresponds to.
 
 <img src="https://i.imgur.com/LdExgJH.png" width=550>
 
-The rest of the values are self-explanatory: The second value is the entry note/description, and the following 5 values are the time values from Monday to Friday. 
+The rest of the values of each line are self-explanatory: The second value is the entry note/description, and the following 5 values are the time values from Monday to Friday. 
 
 Example: 
 ```
