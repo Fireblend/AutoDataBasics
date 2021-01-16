@@ -9,14 +9,14 @@ Tested in Windows only so far.
 
 ### Setup:
 * Clone this repository into a dedicated directory (the ``adb.py`` file is really the only thing you need).
-* Download the **[Selenium Chrome driver](https://chromedriver.chromium.org/downloads)** and place the executable file in the same directory alongside adb.py
+* Download the **[Selenium Chrome driver](https://chromedriver.chromium.org/downloads)** and place the executable file in the same directory alongside ``adb.py``
 * Create an ``auth.txt`` file with 3 lines: The **URL** for your DataBasics login page, your **username** and your **password**. Example:
 ```
 https://xxx.data-basics.net/xxx/databasics.ext#
 sergiome@gmail.com
 p455w0rd
 ```
-* On DataBasics, **[create as many Favorite/Memorized](https://databasics.atlassian.net/wiki/spaces/PG6/pages/526544/Favorites+Timesheet) rows as you will need** to cover your timesheet entries. For example, create one for your project, one for vacations, and so on.
+* On DataBasics, **[create as many Favorite/Memorized](https://databasics.atlassian.net/wiki/spaces/PG6/pages/526544/Favorites+Timesheet) rows as you will need** to cover your timesheet entries. For example, create one for your project, one for vacations, one for meetings, and so on.
 
 ### Filling your Timesheet
 Anytime you want to fill your timesheet, prepare a ``timesheet.txt`` file following the format detailed below and place it in the same directory as the script, auth and driver. Each line in this file corresponds to a timesheet entry, with its values separated by commas. 
@@ -62,7 +62,7 @@ meetings, Finally this note is for an entry using the meetings favorite, 0,3,0,2
 
 ### For Developers:
 
-If you want to build a UI for this, change the input file format or extend it in any other way, it should be fairly easy to do. You can just import the script and use the ``runDataBasics`` function, which receives the **login url**, **username**, **password** and **timesheet lines** which is a list of dict/json objects with ``fav``, ``note`` and ``times`` attributes.
+If you want to build a UI for this, change the input file format or extend it in any other way, it should be fairly easy to do. You can just import the script and use the ``runDataBasics`` function, which receives the **login url**, **username**, **password** and **timesheet lines** which is a list of dict/json objects with ``fav``, ``note`` and ``times`` attributes. **Aliases** are submitted through the optional ``alias`` parameter as a dictionary of ``str`` keys and ``int`` values.
 
 Example:
 ``` py
@@ -72,9 +72,11 @@ db_url = ...
 username = ...
 password = ...
 
-ts = [{"fav":0, "note":"this is a note", "times":[1,1,2,4,5]},
-      {"fav":1, "note":"this is another note", "times":[2,2,3,1,1]},
-      {"fav":1, "note":"this is a third note", "times":[1,1,0,0,0]}]
+alias_dict = {"project":0, "meetings":1}
+
+ts = [{"fav":"project", "note":"this is a note", "times":[1,1,2,4,5]},
+      {"fav":"meetings", "note":"this is another note", "times":[2,2,3,1,1]},
+      {"fav":"project", "note":"this is a third note", "times":[1,1,0,0,0]}]
  
- adb.runDataBasics(db_url, username, password, ts)
+ adb.runDataBasics(db_url, username, password, ts, alias=alias_dict)
  ```
