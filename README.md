@@ -29,10 +29,10 @@ The rest of the values of each line are self-explanatory: The second value is th
 
 Example: 
 ```
-0, This is a note for an entry that uses the favorite in the first row (e.g. project work), 1,5,0,6,6
-1, This is a note for an entry using the favorite in second row (e.g. vacations), 7,0,0,0,0
-1, This is a note for another entry that uses the favorite in the second row (more vacations), 0,0,8,0,0
-2, This is a note for another entry that uses the favorite in the second row (e.g. meetings), 0,3,0,2,2
+0, This is a note for an entry that uses the favorite in the FIRST row (e.g. project work), 1,5,0,6,6
+1, This is a note for an entry using the favorite in SECOND row (e.g. vacations), 7,0,0,0,0
+1, This is a note for another entry that uses the favorite in the SECOND row (more vacations), 0,0,8,0,0
+2, Finally this note is for an entry using the favorite in the THIRD row (e.g. meetings), 0,3,0,2,2
 ```
 (This is a CSV file and is ingested as one, so feel free to use your favorite CSV Editor to prepare it!)
 
