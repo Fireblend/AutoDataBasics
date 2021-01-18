@@ -4,7 +4,7 @@ from time import sleep
 from os import path
 import csv
 
-def runDataBasics(db_url, username, password, timesheet_lines, alias={}):
+def runDataBasics(db_url, username, password, timesheet_lines_all, alias={}):
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_experimental_option("detach", True)
     driver = webdriver.Chrome('./chromedriver', desired_capabilities=chrome_options.to_capabilities())
@@ -30,57 +30,61 @@ def runDataBasics(db_url, username, password, timesheet_lines, alias={}):
 
     sleep(3)
 
-    print("Switching to Favorites View...")
-    favorites_tab = driver.find_element_by_class_name("vertTab-timesheet-template-icon")
-    favorites_tab.click()
+    print("Important: We're going to create entries in chunks of 5 to avoid scroll issues :)")
+    for i in range(0, len(timesheet_lines_all), 5):
+        timesheet_lines = timesheet_lines_all[i:i+5]
 
-    sleep(1)
+        print("Switching to Favorites View...")
+        favorites_tab = driver.find_element_by_class_name("vertTab-timesheet-template-icon")
+        favorites_tab.click()
 
-    icon_adds = driver.find_elements_by_class_name("icon-add")
-
-    print("Creating Entry Lines...")
-    for line in timesheet_lines:
-        try:
-            row = int(line["fav"])
-        except:
-            row = alias[line["fav"]]
-
-        icon_adds[row].click()
         sleep(1)
 
-    x_row_editors = driver.find_elements_by_id("lineNo")
+        icon_adds = driver.find_elements_by_class_name("icon-add")
 
-    print("Closing Favorites View...")
-    timesheet_tab = driver.find_element_by_class_name("vertTab-report-icon-count")
-    timesheet_tab.click()
+        print("Creating Entry Lines %s to %s..." % (i+1,i+len(timesheet_lines)))
+        for line in timesheet_lines:
+            try:
+                row = int(line["fav"])
+            except:
+                row = alias[line["fav"]]
 
-    print("Filling Lines...")
-    timesheet_lines.reverse()
-    for row in range(len(x_row_editors)):
-        web_row = x_row_editors[row]
-        entry = timesheet_lines[row]
-        web_row.click()
-        sleep(0.3)
+            icon_adds[row].click()
+            sleep(1)
 
-        for day in range(3,8):
-            slot = driver.find_element_by_id("timefield"+str(day))
-            slot.send_keys(entry["times"][day-3])
+        x_row_editors = driver.find_elements_by_id("lineNo")
 
-        add_note_btn = driver.find_element_by_id("addTimeLineNewNotes")
-        add_note_btn.click()
-        sleep(0.2)
+        print("Closing Favorites View...")
+        timesheet_tab = driver.find_element_by_class_name("vertTab-report-icon-count")
+        timesheet_tab.click()
 
-        driver.find_element_by_xpath('//button[text()="Yes"]').click()
-        sleep(0.2)
+        print("Filling Lines...")
+        timesheet_lines.reverse()
+        for row in range(len(timesheet_lines)):
+            web_row = x_row_editors[row]
+            entry = timesheet_lines[row]
+            web_row.click()
+            sleep(0.3)
 
-        text_area = driver.find_elements_by_class_name("x-form-textarea")[0]
-        text_area.click()
+            for day in range(3,8):
+                slot = driver.find_element_by_id("timefield"+str(day))
+                slot.send_keys(entry["times"][day-3])
 
-        sleep(0.2)
+            add_note_btn = driver.find_element_by_id("addTimeLineNewNotes")
+            add_note_btn.click()
+            sleep(0.2)
 
-        text_area.send_keys(entry["note"])
+            driver.find_element_by_xpath('//button[text()="Yes"]').click()
+            sleep(0.2)
 
-        driver.find_element_by_xpath('//button[text()="SAVE & CLOSE"]').click()
+            text_area = driver.find_elements_by_class_name("x-form-textarea")[0]
+            text_area.click()
+
+            sleep(0.2)
+
+            text_area.send_keys(entry["note"])
+
+            driver.find_element_by_xpath('//button[text()="SAVE & CLOSE"]').click()
 
     print("Done! Review and submit your timesheet! :)")
 
