@@ -27,12 +27,12 @@ def form():
     if(path.exists("alias.txt")):
         faves = []
         with open("alias.txt") as alias:
+            i = 0
             for line in alias.read().split("\n"):
-                try:
-                    alias_dict[line.split(":")[0]] = int(line.split(":")[1])
-                    faves.append(line.split(":")[0])
-                except:
-                    pass
+                if(line.strip() != ""):
+                    alias_dict[line] = i
+                    faves.append(line)
+                i += 1
 
     if(path.exists("timesheet.txt")):
         with open("timesheet.txt") as ts:
