@@ -1,4 +1,4 @@
-# AutoDataBasics
+# AutoDataBasics (Now with a friendly Web UI!)
 Simplifies Timesheet Entry for DataBasics Timesheets. This should make it much easier to submit your timesheets without having to deal with DataBasics' UI.
 
 Tested in Windows only so far.
