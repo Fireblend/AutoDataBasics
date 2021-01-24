@@ -41,6 +41,7 @@ This UI is pretty straightforward, but here's some features:
 - **Delete Draft**: Deletes all entries on any existing draft and clears the displayed timesheet.
 - **Submit to DataBasics**: This will start the automated timesheet-filling process. Sit back and watch your timesheet be filled :)
 
+---
 ### For Developers:
 
 If you want to build an alternate UI for this, change the input file format or extend it in any other way, it should be fairly easy to do. You can just import the script and use the ``runDataBasics`` function, which receives the **login url**, **username**, **password** and **timesheet lines** which is a list of dict/json objects with ``fav``, ``note`` and ``times`` attributes. **Aliases** are submitted through the optional ``alias`` parameter as a dictionary of ``str`` keys and ``int`` values.
@@ -61,3 +62,5 @@ ts = [{"fav":"project", "note":"this is a note", "times":[1,1,2,4,5]},
  
  adb.runDataBasics(db_url, username, password, ts, alias=alias_dict)
  ```
+---
+Want to say thanks? Donate to <a href="https://immigrantfamiliestogether.com/"><b>Immigrant Families Together</b></a>, <a href="https://www.raicestexas.org/"><b>RAICES</b></a> or a similar charity :)
