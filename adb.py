@@ -98,11 +98,11 @@ if __name__ == "__main__":
     alias_dict = dict()
     if(path.exists("alias.txt")):
         with open("alias.txt") as alias:
+            i = 0
             for line in alias.read().split("\n"):
-                try:
-                    alias_dict[line.split(":")[0]] = int(line.split(":")[1])
-                except:
-                    pass
+                if(line.strip() != ""):
+                    alias_dict[line] = i
+                i += 1
 
     with open("timesheet.txt") as ts:
         csv_reader = csv.reader(ts)

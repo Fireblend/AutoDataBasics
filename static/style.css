@@ -1,0 +1,38 @@
+select, input {
+  padding: 5px 2px;
+  margin: 3px 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 2px solid grey;
+}
+
+div.settings {
+  width: 75%;
+  margin-bottom: 25px
+}
+
+input.setting {
+  margin-left: 10px;
+  padding: 4px 4px;
+}
+
+input.setting_url {
+  margin-left: 10px;
+  padding: 4px 4px;
+  width: 40%
+}
+
+label.lfave, select {
+  width:10%;
+  display: inline-block
+}
+
+input.description, label.ldesc {
+  width: 40%;
+  display: inline-block;
+}
+
+input.hours, label.lt {
+  width: 5%;
+  display: inline-block;
+}
