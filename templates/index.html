@@ -1,0 +1,46 @@
+<html>
+  <title>AutoDataBasics</title>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{url_for('static', filename='index.js')}}"></script>
+    <script>
+      init({{timesheet_lines | safe}}, {{faves | safe}});
+    </script>
+  </head>
+  <body>
+    <center>
+      <h2>AutoDataBasics</h2>
+      <form action="{{ url_for('form_post') }}" method="post">
+        <div class="settings">
+          <label class="lsetting">Login URL</label><input name="url" class="setting_url" value="{{db_url}}"><br>
+          <label class="lsetting">Username</label><input name="username" class="setting" value="{{username}}">
+          <label class="lsetting">Password</label><input name="password" type="password" class="setting" value="{{password}}"><br>
+        </div>
+        <b>
+          <label class="lfave">Favorite</label>
+          <label class="ldesc">Note</label>
+          <label class="lt">Mon</label>
+          <label class="lt">Tue</label>
+          <label class="lt">Wed</label>
+          <label class="lt">Thu</label>
+          <label class="lt">Fri</label><br>
+          <div id="content"></div>
+          <label class="lfave"></label>
+          <label class="ldesc"></label>
+          <label class="lt" id="tmon">0</label>
+          <label class="lt" id="ttue">0</label>
+          <label class="lt" id="twed">0</label>
+          <label class="lt" id="tthu">0</label>
+          <label class="lt" id="tfri">0</label><br>
+          <label id="total">Current Time Total: 0</label><br><br>
+        </b>
+        <input type="button" value="Add Row" onclick="addBlankRow()">
+        <input type="submit" value="Save Draft" name="action">
+        <input type="submit" value="Delete Draft" name="action" onClick="return confirm('This will delete all entries. Are you sure?')">
+        <input type="submit" value="Submit to DataBasics" name="action" onClick="return confirm('Submit to DataBasics? Blank lines will be skipped')">
+      </form>
+      Brought to you by <b><a href="https://www.fireblend.com/">Fireblend</a></b><br>
+      Want to say thanks? Donate to <a href="https://immigrantfamiliestogether.com/"><b>Immigrant Families Together</b></a>, <a href="https://www.raicestexas.org/"><b>RAICES</b></a> or a similar charity :)
+    </center>
+  </body>
+</html>
