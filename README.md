@@ -10,7 +10,7 @@ Tested in Windows only so far.
 * Flask (can be installed using ``pip install flask``)
 
 ### Setup:
-* Clone this repository into a dedicated directory.
+* Clone or download the contents of this repository into a dedicated directory.
 * Download the **[Selenium Chrome driver](https://chromedriver.chromium.org/downloads)** and place the executable file in the same directory alongside ``adb.py``
 * On DataBasics, **[create as many Favorite/Memorized](https://databasics.atlassian.net/wiki/spaces/PG6/pages/526544/Favorites+Timesheet) entries as you will need** to cover your timesheet entries. For example, create one for your project, one for vacations, one for meetings, and so on.
 * Next, set up an **alias file**:  Create a file called ``alias.txt`` with each line being a descriptive name for each **Favorite** created in the previous step, in the same order as they appear on the DataBasics Favorites. Example:
