@@ -13,6 +13,10 @@
       if (ts_lines.length == 0){
         addBlankRow()
       }
+      var days = ["mon", "tue", "wed", "thu", "fri"];
+      for (d of days) {
+        updateTotals(d);
+      }
     }
 
     function addBlankRow() {
