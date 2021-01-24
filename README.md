@@ -27,7 +27,7 @@ p455w0rd
 ```
 ---
 ### Filling your Timesheet:
-Just execute the script! Open your terminal, navigate to the directory where the files are located and run:
+Open your terminal, navigate to the directory where the files are located and run:
 
 ```flask run```
 
