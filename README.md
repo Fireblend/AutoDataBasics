@@ -1,7 +1,8 @@
-# AutoDataBasics
+# AutoDataBasics (Now with a friendly Web UI!)
 Simplifies Timesheet Entry for DataBasics Timesheets. This should make it much easier to submit your timesheets without having to deal with DataBasics' UI.
 
-Tested in Windows only so far.
+Tested in Windows only so far. 
+Pull requests welcome!
 
 ### Requirements:
 * A Python **3.6+** environment
@@ -9,17 +10,17 @@ Tested in Windows only so far.
 * Selenium (can be installed using ``pip install selenium``)
 * Flask (can be installed using ``pip install flask``)
 
-### Setup:
-* Clone or download the contents of this repository into a dedicated directory.
-* Download the **[Selenium Chrome driver](https://chromedriver.chromium.org/downloads)** and place the executable file in the same directory alongside ``adb.py``
-* On DataBasics, **[create as many Favorite/Memorized](https://databasics.atlassian.net/wiki/spaces/PG6/pages/526544/Favorites+Timesheet) entries as you will need** to cover your timesheet entries. For example, create one for your project, one for vacations, one for meetings, and so on.
-* Next, set up an **alias file**:  Create a file called ``alias.txt`` with each line being a descriptive name for each **Favorite** created in the previous step, in the same order as they appear on the DataBasics Favorites. Example:
+### One-Time Setup:
+1. Clone or download the contents of this repository into a dedicated directory.
+2. Download the **[Selenium Chrome driver](https://chromedriver.chromium.org/downloads)** and place the executable file in the same directory alongside ``adb.py``
+3. On DataBasics, **[create as many Favorite/Memorized](https://databasics.atlassian.net/wiki/spaces/PG6/pages/526544/Favorites+Timesheet) entries as you will need** to cover your timesheet entries. For example, create one for your project, one for vacations, one for meetings, and so on.
+4. Next, set up an **alias file**:  Create a file called ``alias.txt`` with each line being a descriptive name for each **Favorite** created in the previous step, in the same order as they appear on the DataBasics Favorites. Example:
 ```
 project
 vacations
 meetings
 ```
-* **Optional**: Create an ``auth.txt`` file with 3 lines: The **URL** for your DataBasics login page, your **username** and your **password**. Example:
+5. **Optional**: Create an ``auth.txt`` file with 3 lines: The **URL** for your DataBasics login page, your **username** and your **password**. Example:
 ```
 https://xxx.data-basics.net/xxx/databasics.ext#
 sergiome@gmail.com
@@ -27,7 +28,7 @@ p455w0rd
 ```
 ---
 ### Filling your Timesheet:
-Open your terminal, navigate to the directory where the files are located and run:
+Anytime you want to report your time, just open your terminal, navigate to the directory where the files are located and run:
 
 ```flask run```
 
