@@ -10,8 +10,7 @@ window.onload = function() {
   if (ts_lines.length == 0){
     addBlankRow()
   }
-  var days = ["mon", "tue", "wed", "thu", "fri"];
-  for (d of days) {
+  for (d of ["mon", "tue", "wed", "thu", "fri"]) {
     updateTotals(d);
   }
 }
@@ -49,28 +48,17 @@ function addRow(fav, note, times) {
   select.value = fav;
   row = row+1
 }
-function confirmSubmit(e) {
-  if(!confirm('Are you sure you want to submit to DataBasics?')) {
-    e.preventDefault();
-  }
-}
-function confirmDelete(e) {
-  if(!confirm('This will delete all entries. Are you sure?')) {
-    e.preventDefault();
-  }
-}
+
 function updateTotals(day) {
   var dayt = 0;
   for (i = 0; i < row; i++) {
-    var name = day+i.toString()
-    var val = document.getElementsByName(name)[0].value;
+    var val = document.getElementsByName(day+i.toString())[0].value;
     dayt += parseFloat(val);
   }
   var t = document.getElementById("t"+day);
   t.innerHTML = dayt;
-  var days = ["tmon", "ttue", "twed", "tthu", "tfri"];
   var total = 0;
-  for (d of days){
+  for (d of ["tmon", "ttue", "twed", "tthu", "tfri"]){
     total = total + parseFloat(document.getElementById(d).innerHTML);
   }
   var f = document.getElementById("total");
