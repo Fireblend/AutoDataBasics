@@ -15,20 +15,20 @@ def runDataBasics(db_url, username, password, timesheet_lines_all, alias={}):
     login_username.send_keys(username)
     login_username.send_keys(Keys.RETURN)
 
-    sleep(1)
+    sleep(2)
 
     print("Filling Password...")
     login_pw = driver.find_element_by_id("password-input")
     login_pw.send_keys(password)
     login_pw.send_keys(Keys.RETURN)
 
-    sleep(1.5)
+    sleep(5)
 
     print("Entering Current Timesheet...")
     current_ts_link = driver.find_element_by_class_name("tm-grid-current-timesheet")
     current_ts_link.click()
 
-    sleep(3)
+    sleep(10)
 
     print("Important: We're going to create entries in chunks of 5 to avoid scroll issues :)")
     for i in range(0, len(timesheet_lines_all), 5):
@@ -38,7 +38,7 @@ def runDataBasics(db_url, username, password, timesheet_lines_all, alias={}):
         favorites_tab = driver.find_element_by_class_name("vertTab-timesheet-template-icon")
         favorites_tab.click()
 
-        sleep(1)
+        sleep(2)
 
         icon_adds = driver.find_elements_by_class_name("icon-add")
 
@@ -50,7 +50,7 @@ def runDataBasics(db_url, username, password, timesheet_lines_all, alias={}):
                 row = alias[line["fav"]]
 
             icon_adds[row].click()
-            sleep(1)
+            sleep(3)
 
         x_row_editors = driver.find_elements_by_id("lineNo")
 
@@ -72,19 +72,20 @@ def runDataBasics(db_url, username, password, timesheet_lines_all, alias={}):
 
             add_note_btn = driver.find_element_by_id("addTimeLineNewNotes")
             add_note_btn.click()
-            sleep(0.2)
+            sleep(0.8)
 
             driver.find_element_by_xpath('//button[text()="Yes"]').click()
-            sleep(0.2)
+            sleep(1)
 
             text_area = driver.find_elements_by_class_name("x-form-textarea")[0]
             text_area.click()
 
-            sleep(0.2)
+            sleep(0.3)
 
             text_area.send_keys(entry["note"])
 
             driver.find_element_by_xpath('//button[text()="SAVE & CLOSE"]').click()
+            sleep(0.8)
 
     print("Done! Review and submit your timesheet! :)")
 

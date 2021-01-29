@@ -54,6 +54,7 @@ def form_post():
         deleteDraft()
         return form()
     elif request.form['action'] == 'Submit to DataBasics':
+        saveToFile(ts)
         url = request.form["url"]
         username = request.form["username"]
         password = request.form["password"]
